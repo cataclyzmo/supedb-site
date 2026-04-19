@@ -7,9 +7,8 @@
 /****************************************************/
 nav{
 	display: inline-flex;
-	/*Puts space between .logo, list, & button.
-	  Used w/ flex containers only.*/
-	justify-content: space-between;
+	/*Centers items on the x-axis.*/
+	justify-content: center;
 	/*puts .logo, list, & button in the center of their
 	  respective text boxes. Works w/ flexboxes (or grids).*/
 	align-items: center;
@@ -18,10 +17,15 @@ nav{
 	margin: 0;
 	height: 55px;
     background-color: #f6cb06;
-    font-size: min(16px, 3.5vw);
+    font-size: min(15px, 3vw);
 
     /*variables*/
     --menu-exterior-padding: 2vw;
+
+    /*space between on the x-axis*/
+    @media only screen and (max-width: 650px) {
+    	justify-content: space-between;
+    }
 }
 
 /****************************************************/
@@ -70,39 +74,6 @@ nav ul li a:hover{
 	text-underline-offset: 20.5px;
 }
 
-/****************************************************/
-/******************** 1.3 - Button ******************/
-/****************************************************/
-
-.button-link{
-	padding-right: var(--menu-exterior-padding);
-
-    /*remove the button on smaller screens, we will use
-      a hamburger menu instead*/
-	@media only screen and (max-width: 650px) {
-		display: none;
-    }
-}
-
-nav a button{
-	/*top-bottom, left-right*/
-	padding: 9px 20px;
-	border: none;
-	/*makes an oval*/
-	border-radius: 8px;
-	cursor: pointer;
-	transition: all 0.3s ease 0s;
-	/*gradient direction, color & color-stop, color & color start*/
-	/*uninitative color starts & stops create a blend effect/look*/
-	background-image: linear-gradient(to bottom, #ADD8E6 0, #3483eb 100%);
-}
-
-nav a button:hover{
-	/*creates a changing colors effect when hovering over it*/
-	background-image: linear-gradient(to bottom, #669ed4 0, #5998d4 100%);
-}
-
-
 
 /****************************************************/
 /********** 1.2 & 1.3 Alt - Hamburger Menu **********/
@@ -125,8 +96,8 @@ nav a button:hover{
 
 	.ham-menu span{
 		/*position of ham-menu bars ('spans') is absolute relative to the parent*/
-		/*The 'top' property only works on posistioned elements so we have to set 'position'*/
-		/*'relative' means positioned relative to a normal position whereas 'absolute means 
+		/*The 'top' property only works on posistioned elements so we have to set 'position'.*/
+		/*'Relative' means positioned relative to a normal position whereas 'absolute means 
 		   positioned relative to one's parent. 'Absolute' was chosen because the 'top' property
 		   below is working relative to a parent/grandparent.*/
 		position: absolute;
