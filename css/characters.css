@@ -16,7 +16,7 @@ body{
   grid-template-columns: auto; 
 
   --character-img-width: 250px;
-  --main-content-width: 1600px;
+  --main-content-width: 800px;
 }
 
 
@@ -25,7 +25,13 @@ body{
 /****************************************************/
 
 h1{
-  margin: 50px 50px 0px 50px;
+  /*the 'auto' for both right & left horizontally centers h1*/
+  /*top, right, bottom, left*/
+  margin: 50px auto 0 auto; 
+  /*prevents h1 from spanning the whole screen*/
+  max-width: var(--main-content-width); 
+  /*h1 will take up 96% of 'max-width' or less instead of just width of text alone*/
+  width: 96%;
   font-family: Poppins;
 }
 
@@ -72,7 +78,7 @@ h1{
 
 /* Button styling */
 .dropdown-button {
-  background-color: #4CAF50;
+  background-color: black;
   color: white; /*button text*/
   padding: 10px 20px;
   font-size: 16px;
@@ -126,7 +132,7 @@ h1{
 
 /* Button hover effect */
 .dropdown:hover .dropdown-button {
-  background-color: #45a049;
+  background-color: gray;
 }
 
 
