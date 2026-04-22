@@ -16,7 +16,7 @@ body{
   grid-template-columns: auto; 
 
   --character-img-width: 250px;
-  --main-content-width: 800px;
+  --main-content-width: 900px;
 }
 
 
